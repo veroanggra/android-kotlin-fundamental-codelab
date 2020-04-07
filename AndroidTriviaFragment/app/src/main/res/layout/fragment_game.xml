@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="game"
+            type="com.veronica.idn.androidtriviafragment.GameFragment" />
+    </data>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".GameFragment">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/fm_game"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btn_submit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_32"
+                android:text="@string/submit"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/rg_question"
+                app:layout_constraintStart_toStartOf="@+id/rg_question"
+                app:layout_constraintTop_toBottomOf="@+id/rg_question"
+                app:layout_constraintVertical_bias="0.234" />
+
+            <ImageView
+                android:id="@+id/iv_question_image"
+                android:layout_width="@dimen/_0"
+                android:layout_height="@dimen/_192"
+                android:layout_marginStart="@dimen/_16"
+                android:layout_marginTop="@dimen/_16"
+                android:layout_marginEnd="@dimen/_16"
+                android:layout_marginBottom="@dimen/_16"
+                android:contentDescription="@string/question_image"
+                android:scaleType="fitCenter"
+                android:src="@drawable/android_category_simple"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/tv_question"
+                android:layout_width="@dimen/_0"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_32"
+                android:layout_marginTop="@dimen/_32"
+                android:layout_marginEnd="@dimen/_32"
+                android:layout_marginBottom="@dimen/_16"
+                android:text="@string/questions"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_question_image"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <RadioGroup
+                android:id="@+id/rg_question"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_32"
+                android:layout_marginTop="@dimen/_16"
+                android:layout_marginEnd="@dimen/_32"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_question">
+
+                <RadioButton
+                    android:id="@+id/rb_first_answer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/blue"
+                    android:textAlignment="viewStart"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_question" />
+
+                <RadioButton
+                    android:id="@+id/rb_second_answer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/green" />
+
+                <RadioButton
+                    android:id="@+id/rb_third_answer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/yellow" />
+
+                <RadioButton
+                    android:id="@+id/rb_fourth_answer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/red" />
+            </RadioGroup>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</layout>

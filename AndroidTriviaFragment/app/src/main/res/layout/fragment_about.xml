@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AboutFragment">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_about_image"
+            android:layout_width="@dimen/_0"
+            android:layout_height="@dimen/_192"
+            android:layout_marginStart="@dimen/_8"
+            android:layout_marginTop="@dimen/_16"
+            android:layout_marginEnd="@dimen/_8"
+            android:contentDescription="@string/about_trivia"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/about_android_trivia" />
+
+        <TextView
+            android:id="@+id/tv_about"
+            android:layout_width="@dimen/_0"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8"
+            android:layout_marginTop="@dimen/_16"
+            android:layout_marginEnd="@dimen/_8"
+            android:layout_marginBottom="@dimen/_16"
+            android:text="@string/about_text"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/_16f"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_about_image" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
