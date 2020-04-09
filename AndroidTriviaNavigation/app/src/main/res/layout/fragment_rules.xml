@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rulesLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RulesFragment">
+
+    <ImageView
+        android:id="@+id/iv_rules"
+        android:layout_width="@dimen/_0"
+        android:layout_height="@dimen/_192"
+        android:layout_marginStart="@dimen/_16"
+        android:layout_marginTop="@dimen/_16"
+        android:layout_marginEnd="@dimen/_16"
+        android:contentDescription="@string/rules_image"
+        android:src="@drawable/trivia_rules"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_rules"
+        android:layout_width="@dimen/_0"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_32"
+        android:text="@string/rules_text"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/iv_rules"
+        app:layout_constraintStart_toStartOf="@+id/iv_rules"
+        app:layout_constraintTop_toBottomOf="@+id/iv_rules" />
+</androidx.constraintlayout.widget.ConstraintLayout>

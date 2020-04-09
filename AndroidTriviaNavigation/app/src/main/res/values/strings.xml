@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">AndroidTriviaNavigation</string>
+    <string name="share">Share</string>
+    <string name="header_image">Header Image</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="image_header">Image Header</string>
+    <string name="title_image">Title Image</string>
+    <string name="btnPlay">PLAY</string>
+    <string name="rules_image">Rules Image</string>
+    <string name="about_text">Android Trivia will help remind you of important concepts you have learned and will learn in Android development.\n\nConsider modifying the questions and graphics to make this game your own!</string>
+    <string name="rules_text">Select the answer from the options given. Each time you get an answer correct, you advance to the next question.\n\nIf you get the answer wrong, your game ends! You can return to the title screen using up or back from within the game screen, and this will also end your game.</string>
+    <string name="about_images">About Images</string>
+    <string name="game_image">Game Image</string>
+    <string name="questions">What color is the Android mascot?</string>
+    <string name="blue">Blue</string>
+    <string name="green">Green</string>
+    <string name="yellow">Yellow</string>
+    <string name="red">Red</string>
+    <string name="title_android_trivia_question">Android Trivia (%1$d/%2$d)</string>
+    <string name="image_won">Image Won</string>
+    <string name="next_match">NEXT MATCH</string>
+    <string name="submit">SUBMIT</string>
+    <string name="image_lost">Image Lost</string>
+    <string name="try_again">TRY AGAIN</string>
+
+
+</resources>
