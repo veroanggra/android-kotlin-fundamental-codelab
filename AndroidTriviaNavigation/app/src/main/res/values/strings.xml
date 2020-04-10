@@ -24,6 +24,8 @@
     <string name="submit">SUBMIT</string>
     <string name="image_lost">Image Lost</string>
     <string name="try_again">TRY AGAIN</string>
+    <string name="rules">Rules</string>
+    <string name="about">About</string>
 
 
 </resources>

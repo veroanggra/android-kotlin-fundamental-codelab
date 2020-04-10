@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="@dimen/_192"
     android:background="@color/colorBackgroundNav"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark"
     android:padding="@dimen/_16">
 
     <ImageView
@@ -16,11 +17,12 @@
         android:layout_marginTop="@dimen/_8"
         android:layout_marginEnd="@dimen/_8"
         android:layout_marginBottom="@dimen/_8"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:contentDescription="@string/image_header"
-        tools:srcCompat="@drawable/nav_header" />
+        app:srcCompat="@drawable/nav_header" />
 </androidx.constraintlayout.widget.ConstraintLayout>

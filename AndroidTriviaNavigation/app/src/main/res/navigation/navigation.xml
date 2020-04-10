@@ -3,30 +3,39 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/gameFragment">
+    app:startDestination="@id/titleFragment">
     <fragment
         android:id="@+id/gameFragment"
         android:name="com.veronica.idn.androidtrivianavigation.GameFragment"
-        android:label="GameFragment" >
+        android:label="GameFragment"
+        tools:layout="@layout/fragment_game">
         <action
             android:id="@+id/action_gameFragment_to_gameOverFragment"
-            app:destination="@id/gameOverFragment" />
+            app:destination="@id/gameOverFragment"
+            app:popUpTo="@id/gameFragment"
+            app:popUpToInclusive="true"/>
         <action
             android:id="@+id/action_gameFragment_to_wonFragment"
-            app:destination="@id/wonFragment" />
+            app:destination="@id/wonFragment"
+            app:popUpTo="@id/gameFragment"
+            app:popUpToInclusive="true"/>
     </fragment>
     <fragment
         android:id="@+id/gameOverFragment"
         android:name="com.veronica.idn.androidtrivianavigation.GameOverFragment"
-        android:label="GameOverFragment" >
+        android:label="GameOverFragment"
+        tools:layout="@layout/fragment_game_over">
         <action
             android:id="@+id/action_gameOverFragment_to_gameFragment"
-            app:destination="@id/gameFragment" />
+            app:destination="@id/gameFragment"
+            app:popUpTo="@id/titleFragment"
+            app:popUpToInclusive="false"/>
     </fragment>
     <fragment
         android:id="@+id/titleFragment"
         android:name="com.veronica.idn.androidtrivianavigation.TitleFragment"
-        android:label="TitleFragment" >
+        android:label="TitleFragment"
+        tools:layout="@layout/fragment_title">
         <action
             android:id="@+id/action_titleFragment_to_gameFragment"
             app:destination="@id/gameFragment" />
@@ -34,19 +43,22 @@
     <fragment
         android:id="@+id/wonFragment"
         android:name="com.veronica.idn.androidtrivianavigation.WonFragment"
-        android:label="WonFragment" >
+        android:label="WonFragment"
+        tools:layout="@layout/fragment_won">
         <action
             android:id="@+id/action_wonFragment_to_gameFragment"
-            app:destination="@id/gameFragment" />
+            app:destination="@id/gameFragment"
+            app:popUpTo="@id/titleFragment"
+            app:popUpToInclusive="false"/>
     </fragment>
     <fragment
         android:id="@+id/aboutFragment"
         android:name="com.veronica.idn.androidtrivianavigation.AboutFragment"
-        android:label="fragment_about"
+        android:label="Fragment About"
         tools:layout="@layout/fragment_about" />
     <fragment
         android:id="@+id/rulesFragment"
         android:name="com.veronica.idn.androidtrivianavigation.RulesFragment"
-        android:label="fragment_rules"
+        android:label="Fragment Rules"
         tools:layout="@layout/fragment_rules" />
 </navigation>

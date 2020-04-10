@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
 import com.veronica.idn.androidtrivianavigation.databinding.FragmentGameBinding
 
 /**
@@ -73,6 +74,7 @@ class GameFragment : Fragment() {
     lateinit var answers: MutableList<String>
     private var questionIndex = 0
     private val numQuestions = Math.min((questions.size + 1) / 2, 3)
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -80,8 +82,8 @@ class GameFragment : Fragment() {
         val binding = DataBindingUtil.inflate<FragmentGameBinding>(inflater, R.layout.fragment_game, container, false)
         randomizeQuestions()
         binding.game = this
-        binding.btnSubmit.setOnClickListener {
-            view:View ->
+        binding.btnSubmit.setOnClickListener @Suppress("UNUSED_ANONYMOUS_PARAMETER")
+        { view:View ->
             val checkeId = binding.rgGame.checkedRadioButtonId
             if (-1 != checkeId){
                 var answersIndex = 0
@@ -90,21 +92,29 @@ class GameFragment : Fragment() {
                     R.id.rb_third_answer -> answersIndex = 2
                     R.id.rb_fourth_answer -> answersIndex = 3
                 }
-                if (answers[answersIndex]==currentQuestion.answers[0]){
+                if (answers[answersIndex] == currentQuestion.answers[0]){
                     questionIndex++
+
                     if (questionIndex < numQuestions){
                         currentQuestion = questions[questionIndex]
                         setQuestion()
                         binding.invalidateAll()
                     }else{
+                        view.findNavController().navigate(R.id.action_gameFragment_to_wonFragment)
 
                     }
                 }else{
+                    view.findNavController().navigate(R.id.action_gameFragment_to_gameOverFragment)
 
                 }
             }
         }
         return binding.root
+    }
+    private fun randomizeQuestions() {
+        questions.shuffle()
+        questionIndex = 0
+        setQuestion()
     }
 
     private fun setQuestion() {
@@ -114,11 +124,7 @@ class GameFragment : Fragment() {
         (activity as AppCompatActivity).supportActionBar?.title = getString(R.string.title_android_trivia_question, questionIndex + 1, numQuestions)
     }
 
-    private fun randomizeQuestions() {
-        questions.shuffle()
-        questionIndex = 0
-        setQuestion()
-    }
+
 
 
 }
