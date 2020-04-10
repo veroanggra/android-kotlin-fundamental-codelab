@@ -48,7 +48,7 @@
                 android:layout_width="@dimen/_0"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_32"
-                android:text="@string/questions"
+                android:text="@{game.currentQuestion.text}"
                 android:textSize="30sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="@+id/iv_game"
@@ -70,25 +70,25 @@
                     android:id="@+id/rb_first_answer"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/blue" />
+                    android:text="@{game.answers[0]}" />
 
                 <RadioButton
                     android:id="@+id/rb_second_answer"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/green" />
+                    android:text="@{game.answers[1]}" />
 
                 <RadioButton
                     android:id="@+id/rb_third_answer"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/yellow" />
+                    android:text="@{game.answers[2]}" />
 
                 <RadioButton
                     android:id="@+id/rb_fourth_answer"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/red" />
+                    android:text="@{game.answers[3]}" />
             </RadioGroup>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
