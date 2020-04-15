@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
 import com.veronica.idn.androidtrivianavigation.databinding.FragmentWonBinding
 
 /**
@@ -19,6 +20,9 @@ class WonFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val binding : FragmentWonBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_won, container, false)
+        binding.btnNextMatch.setOnClickListener {
+            view:View -> view.findNavController().navigate(R.id.action_wonFragment_to_gameFragment)
+        }
         return binding.root
     }
 

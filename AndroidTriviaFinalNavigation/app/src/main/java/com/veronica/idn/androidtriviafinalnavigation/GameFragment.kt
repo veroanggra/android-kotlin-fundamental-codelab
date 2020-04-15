@@ -1,4 +1,4 @@
-package com.veronica.idn.androidtrivianavigation
+package com.veronica.idn.androidtriviafinalnavigation
 
 
 import android.os.Bundle
@@ -9,14 +9,12 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
-import com.veronica.idn.androidtrivianavigation.databinding.FragmentGameBinding
+import com.veronica.idn.androidtriviafinalnavigation.databinding.FragmentGameBinding
 
 /**
  * A simple [Fragment] subclass.
  */
 class GameFragment : Fragment() {
-
-
     private val questions: MutableList<Questions> = mutableListOf(
         Questions(
             text = "What is Android Jetpack?",
@@ -70,58 +68,60 @@ class GameFragment : Fragment() {
         )
     )
 
-    lateinit var currentQuestion: Questions
-    lateinit var answers: MutableList<String>
-    private var questionIndex = 0
+    lateinit var currentQuestions: Questions
+    lateinit var answer: MutableList<String>
+    private var questionsIndex = 0
     private val numQuestions = Math.min((questions.size + 1) / 2, 3)
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val binding = DataBindingUtil.inflate<FragmentGameBinding>(inflater, R.layout.fragment_game, container, false)
-        randomizeQuestions()
+        val binding: FragmentGameBinding =
+            DataBindingUtil.inflate(inflater, R.layout.fragment_game, container, false)
+        randomizeQuiz()
         binding.game = this
-        binding.btnSubmit.setOnClickListener @Suppress("UNUSED_ANONYMOUS_PARAMETER")
-        { view:View ->
-            val checkeId = binding.rgGame.checkedRadioButtonId
-            if (-1 != checkeId){
-                var answersIndex = 0
-                when (checkeId){
-                    R.id.rb_second_answer -> answersIndex = 1
-                    R.id.rb_third_answer -> answersIndex = 2
-                    R.id.rb_fourth_answer -> answersIndex = 3
+        binding.btnSubmit.setOnClickListener { view: View ->
+            val checkedId = binding.rgQuestion.checkedRadioButtonId
+            if (-1 != checkedId) {
+                var answerIndex = 0
+                when (checkedId) {
+                    R.id.rb_second_answer -> answerIndex = 1
+                    R.id.rb_third_answer -> answerIndex = 2
+                    R.id.rb_fourth_answer -> answerIndex = 3
                 }
-                if (answers[answersIndex] == currentQuestion.answers[0]){
-                    questionIndex++
+                if (answer[answerIndex] == currentQuestions.answers[0]) {
+                    questionsIndex++
 
-                    if (questionIndex < numQuestions){
-                        currentQuestion = questions[questionIndex]
+                    if (questionsIndex < numQuestions) {
+                        currentQuestions = questions[questionsIndex]
                         setQuestion()
                         binding.invalidateAll()
-                    }else{
-                        view.findNavController().navigate(R.id.action_gameFragment_to_wonFragment)
-
+                    } else {
+                        view.findNavController()
+                            .navigate(R.id.action_gameFragment_to_wonGameFragment)
                     }
-                }else{
+                } else {
                     view.findNavController().navigate(R.id.action_gameFragment_to_gameOverFragment)
-
                 }
             }
         }
         return binding.root
-    }
-    private fun randomizeQuestions() {
-        questions.shuffle()
-        questionIndex = 0
-        setQuestion()
+
+
     }
 
     private fun setQuestion() {
-        currentQuestion = questions[questionIndex]
-        answers = currentQuestion.answers.toMutableList()
-        answers.shuffle()
-        (activity as AppCompatActivity).supportActionBar?.title = getString(R.string.title_android_trivia_question, questionIndex + 1, numQuestions)
+        currentQuestions = questions[questionsIndex]
+        answer = currentQuestions.answers.toMutableList()
+        answer.shuffle()
+        (activity as AppCompatActivity).supportActionBar?.title =
+            getString(R.string.title_android_trivia_question, questionsIndex + 1, numQuestions)
     }
 
+    private fun randomizeQuiz() {
+        questions.shuffle()
+        questionsIndex = 0
+        setQuestion()
+    }
 }

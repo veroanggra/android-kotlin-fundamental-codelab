@@ -1,37 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/wonLayout"
+        android:id="@+id/gameOverLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#F6C0FAD5"
-        tools:context=".fragment.WonFragment">
+        android:background="@color/colorBackgroundGameOver"
+        tools:context=".GameOverFragment">
 
         <ImageView
-            android:id="@+id/iv_won"
+            android:id="@+id/iv_game_over"
             android:layout_width="@dimen/_0"
             android:layout_height="@dimen/_192"
             android:layout_marginStart="@dimen/_16"
-            android:layout_marginTop="144dp"
+            android:layout_marginTop="96dp"
             android:layout_marginEnd="@dimen/_16"
-            android:contentDescription="@string/image_won"
-            android:src="@drawable/you_win"
+            android:contentDescription="@string/image_game_over"
+            android:src="@drawable/try_again"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/btn_next_match"
+            android:id="@+id/btn_try_again"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16"
             android:layout_marginTop="@dimen/_32"
-            android:text="@string/next_match"
-            app:layout_constraintEnd_toEndOf="@+id/iv_won"
-            app:layout_constraintStart_toStartOf="@+id/iv_won"
-            app:layout_constraintTop_toBottomOf="@+id/iv_won" />
+            android:layout_marginEnd="@dimen/_16"
+            android:text="@string/try_again"
+            app:layout_constraintEnd_toEndOf="@+id/iv_game_over"
+            app:layout_constraintStart_toStartOf="@+id/iv_game_over"
+            app:layout_constraintTop_toBottomOf="@+id/iv_game_over" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </layout>

@@ -4,23 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/wonLayout"
+        android:id="@+id/wonGameLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#F6C0FAD5"
-        tools:context=".fragment.WonFragment">
+        android:background="@color/colorBackgroundWon"
+        tools:context=".WonGameFragment">
 
         <ImageView
             android:id="@+id/iv_won"
             android:layout_width="@dimen/_0"
             android:layout_height="@dimen/_192"
             android:layout_marginStart="@dimen/_16"
-            android:layout_marginTop="144dp"
+            android:layout_marginTop="@dimen/_16"
             android:layout_marginEnd="@dimen/_16"
-            android:contentDescription="@string/image_won"
+            android:contentDescription="@string/won_image"
             android:src="@drawable/you_win"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -28,10 +27,13 @@
             android:id="@+id/btn_next_match"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16"
             android:layout_marginTop="@dimen/_32"
+            android:layout_marginEnd="@dimen/_16"
             android:text="@string/next_match"
             app:layout_constraintEnd_toEndOf="@+id/iv_won"
             app:layout_constraintStart_toStartOf="@+id/iv_won"
             app:layout_constraintTop_toBottomOf="@+id/iv_won" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </layout>
