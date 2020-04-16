@@ -3,11 +3,11 @@ package com.veronica.idn.androidtriviafinalnavigation
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
 import com.veronica.idn.androidtriviafinalnavigation.databinding.FragmentWonGameBinding
 
 /**
@@ -21,17 +21,43 @@ class WonGameFragment : Fragment() {
     ): View? {
         val binding: FragmentWonGameBinding = DataBindingUtil.inflate(
             inflater,
-            R.id.action_wonGameFragment_to_gameFragment,
+            R.layout.fragment_won_game,
             container,
             false
         )
+        binding.btnNextMatch.setOnClickListener {
+            view:View -> view.findNavController().navigate(WonGameFragmentDirections.actionWonGameFragmentToGameFragment())
+        }
+
+        val args = WonGameFragmentArgs.fromBundle(arguments!!)
+        Toast.makeText(context,"NumCorrect: ${args.numCorrect}, NumQuestions: ${args.numQuestions}", Toast.LENGTH_LONG).show()
         setHasOptionsMenu(true)
         return binding.root
     }
 
-//    private fun getShareIntent(): Intent{
-//        return
-//    }
+    private fun getShareIntent(): Intent{
+        val args = WonGameFragmentArgs.fromBundle(arguments!!)
+        val intent = Intent(Intent.ACTION_SEND)
+        intent.setType("text/plain").putExtra(Intent.EXTRA_TEXT,getString(R.string.share_success_text, args.numCorrect, args.numQuestions))
+        return intent
+    }
 
+    private fun shareSuccess(){
+        startActivity(getShareIntent())
+    }
 
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.share_menu, menu)
+        if (null == getShareIntent().resolveActivity(activity!!.packageManager))
+            menu.findItem(R.id.action_share)?.setVisible(false)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId){
+            R.id.action_share -> shareSuccess()
+        }
+        return super.onOptionsItemSelected(item)
+
+    }
 }
