@@ -5,12 +5,14 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import timber.log.Timber
 
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        Timber.i("onCreate Called")
         val rollButton: Button = findViewById(R.id.btn_roll)
         rollButton.setOnClickListener { rolleDice() }
 
@@ -60,5 +62,35 @@ class MainActivity : AppCompatActivity() {
             imageFirstDice.setImageResource(R.drawable.dice_1)
             imageSecondDice.setImageResource(R.drawable.dice_1)
         }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Timber.i("onStart Called")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Timber.i("onResume Called")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Timber.i("onPause Called")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Timber.i("onStop Called")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Timber.i("onDestroy Called")
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        Timber.i("onRestart Called")
     }
 }
