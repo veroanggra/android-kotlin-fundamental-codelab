@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">DessertClickerLogs</string>
+    <string name="share">Share</string>
+    <string name="background_image">Background Image</string>
+    <string name="dessert_image">Dessert Image</string>
+    <string name="revenue_text">$92</string>
+    <string name="dessert_sold">Desserts Sold</string>
+    <string name="amount_sold_dessert_text">9</string>
+    <string name="share_text">I\'ve clicked %1$d Desserts for a total of %2$d$ #AndroidDessertClicker</string>
+    <string name="sharing_not_available">Sharing Not Available</string>
+</resources>

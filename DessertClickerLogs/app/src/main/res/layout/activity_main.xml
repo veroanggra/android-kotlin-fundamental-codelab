@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="revenue"
+            type="Integer" />
+
+        <variable
+            name="amountSold"
+            type="Integer" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <ImageView
+            android:id="@+id/iv_background"
+            android:layout_width="@dimen/_0"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/background_image"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/bakery_back" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/end_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/_16" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/bottom_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_end="@dimen/_16" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/begin_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/_16" />
+
+        <ImageButton
+            android:id="@+id/iv_dessert"
+            android:layout_width="@dimen/_150"
+            android:layout_height="@dimen/_150"
+            android:contentDescription="@string/dessert_image"
+            android:scaleType="centerCrop"
+            android:src="@drawable/cupcake"
+            android:background="?android:selectableItemBackground"
+            android:visibility="visible"
+            app:layout_constraintBottom_toTopOf="@id/view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.436" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="@dimen/_0"
+            android:layout_height="@dimen/_0"
+            android:background="@color/colorWhite"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_dessert_sold"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/tv_revenue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text='@{"$" + revenue.toString()}'
+            android:textColor="@color/colorGreen"
+            android:textSize="@dimen/_33f"
+            app:layout_constraintBottom_toBottomOf="@id/bottom_guideline"
+            app:layout_constraintEnd_toStartOf="@+id/end_guideline" />
+
+        <TextView
+            android:id="@+id/tv_dessert_sold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:paddingTop="@dimen/_16"
+            android:text="@string/dessert_sold"
+            android:textSize="@dimen/_20f"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_amount_sold_dessert"
+            app:layout_constraintStart_toStartOf="@id/begin_guideline" />
+
+        <TextView
+            android:id="@+id/tv_amount_sold_dessert"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_16"
+            android:paddingTop="@dimen/_32"
+            android:text="@{amountSold.toString()}"
+            android:textSize="@dimen/_20f"
+            app:layout_constraintBottom_toTopOf="@+id/tv_revenue"
+            app:layout_constraintEnd_toStartOf="@id/end_guideline" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
