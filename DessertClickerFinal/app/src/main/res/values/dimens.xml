@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="corner_radius">16dp</dimen>
+    <dimen name="_0">0dp</dimen>
+    <dimen name="_16">16dp</dimen>
+    <dimen name="_33f">33sp</dimen>
+    <dimen name="_20f">20sp</dimen>
+    <dimen name="_32">32dp</dimen>
+    <dimen name="_150">150dp</dimen>
+</resources>
