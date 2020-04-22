@@ -3,6 +3,7 @@
     package="com.veronica.idn.guesstheword">
 
     <application
+        android:name=".common.GuessWordApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
