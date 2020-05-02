@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/game_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".screen.game.GameFragment">
+
+        <TextView
+            android:id="@+id/tv_the_word"
+            android:layout_width="@dimen/_0"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16"
+            android:layout_marginTop="216dp"
+            android:layout_marginEnd="@dimen/_16"
+            android:text="@string/the_word"
+            android:textAlignment="center"
+            android:textSize="@dimen/_16f"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_word"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_30"
+            android:text="@string/word"
+            android:textSize="@dimen/_36f"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/tv_the_word"
+            app:layout_constraintStart_toStartOf="@+id/tv_the_word"
+            app:layout_constraintTop_toBottomOf="@+id/tv_the_word" />
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="@dimen/_0"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="168dp"
+            android:text="@string/time"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toTopOf="@+id/guideline"
+            app:layout_constraintEnd_toEndOf="@+id/tv_the_word"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/tv_the_word"
+            app:layout_constraintTop_toBottomOf="@+id/tv_word" />
+
+        <TextView
+            android:id="@+id/tv_score"
+            android:layout_width="@dimen/_0"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="@dimen/_16"
+            android:text="@string/score"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toTopOf="@+id/guideline"
+            app:layout_constraintEnd_toEndOf="@+id/tv_the_word"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/tv_the_word"
+            app:layout_constraintTop_toBottomOf="@+id/tv_time"
+            app:layout_constraintVertical_bias="0.015" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_end="96dp" />
+
+        <Button
+            android:id="@+id/btn_skip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/skip"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline" />
+
+        <Button
+            android:id="@+id/btn_got_it"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="57dp"
+            android:text="@string/got_it"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_skip"
+            app:layout_constraintStart_toEndOf="@+id/btn_skip"
+            app:layout_constraintTop_toTopOf="@+id/btn_skip" />
+
+        <Button
+            android:id="@+id/btn_end_game"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="37dp"
+            android:text="@string/end_game"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_skip"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btn_got_it"
+            app:layout_constraintTop_toTopOf="@+id/btn_skip" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

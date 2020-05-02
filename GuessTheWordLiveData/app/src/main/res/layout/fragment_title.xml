@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/title_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".screen.title.TitleFragment" >
+
+        <TextView
+            android:id="@+id/tv_ready"
+            android:layout_width="@dimen/_0"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16"
+            android:layout_marginTop="244dp"
+            android:layout_marginEnd="@dimen/_16"
+            android:gravity="center"
+            android:text="@string/ready"
+            android:textAlignment="center"
+            android:textSize="@dimen/_16f"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_guess_word"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:text="@string/guess"
+            android:textSize="@dimen/_36f"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tv_ready"
+            app:layout_constraintTop_toBottomOf="@+id/tv_ready" />
+
+        <Button
+            android:id="@+id/btn_play"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="208dp"
+            android:layout_marginBottom="@dimen/_30"
+            android:text="@string/play"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/tv_ready"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="@+id/tv_ready"
+            app:layout_constraintTop_toBottomOf="@+id/tv_guess_word" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
