@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">GuessTheWordLiveData</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="ready">Get ready to</string>
+    <string name="guess">guess the word!</string>
+    <string name="play">PLAY</string>
+    <string name="the_word">The word is ...</string>
+    <string name="word">\"Tuna\"</string>
+    <string name="time">00:00</string>
+    <string name="score">Score:3</string>
+    <string name="skip">SKIP</string>
+    <string name="got_it">GOT IT</string>
+    <string name="end_game">END GAME</string>
+    <string name="you_scored">You Scored</string>
+    <string name="score_value">40</string>
+    <string name="play_again">PLAY AGAIN</string>
+</resources>
